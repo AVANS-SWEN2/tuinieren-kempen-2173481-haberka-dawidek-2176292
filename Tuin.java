@@ -17,6 +17,10 @@ class Tuin {
 		slimmeSchakelaar.activate();
 		do {
 			System.out.println("Regen installatie staat op" + slimmeSchakelaar.getSlimmeschakelaar());
+			System.out.println("Wilt u de toestand van de verlichting weten?");
+			if(reader.readLine().equalsIgnoreCase("JA"))
+            	System.out.println("Het tuinverlichting staat " + (slimmeSchakelaar.getLicht().isLicht() ? "aan" : "uit"));
+			
 			System.out.print("Wilt u stoppen (JA/NEE)");
 			input = reader.readLine();
 
