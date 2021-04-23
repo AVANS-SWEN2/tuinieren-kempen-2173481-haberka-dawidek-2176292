@@ -4,30 +4,23 @@ import java.io.InputStreamReader;
 
 class Tuin {
 
-    public static void main(String[] args) 
-    throws IOException
-    {
-        // Enter data using BufferReader
-        BufferedReader reader = new BufferedReader(
-            new InputStreamReader(System.in));
-  
-        System.out.println("Welkom in mijn tuin.");
-        Sproeier slangetje = new Sproeier();
-        TuinDomotica slimmeSchakelaar = new TuinDomotica();
-        String input = "";
-        do
-        {
-            System.out.println("Regen installatie staat op"+ slimmeSchakelaar.getSlimmeschakelaar());
-            System.out.println("Regent het (JA/NEE)");
-            input = reader.readLine();
-            slimmeSchakelaar.setRegen(input.equalsIgnoreCase("JA"));
+	public static void main(String[] args) throws IOException {
+		// Enter data using BufferReader
+		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
-            System.out.print("Wilt u stoppen (JA/NEE)");
-            input = reader.readLine();
+		System.out.println("Welkom in mijn tuin.");
+		Sproeier slangetje = new Sproeier();
+		TuinDomotica slimmeSchakelaar = new TuinDomotica();
+		String input = "";
+		System.out.println("Regent het (JA/NEE)");
+		slimmeSchakelaar.setRegen(reader.readLine().equalsIgnoreCase("JA"));
+		slimmeSchakelaar.activate();
+		do {
+			System.out.println("Regen installatie staat op" + slimmeSchakelaar.getSlimmeschakelaar());
+			System.out.print("Wilt u stoppen (JA/NEE)");
+			input = reader.readLine();
 
-        } while (!input.equalsIgnoreCase("JA"));
-        System.out.println(slangetje.getHoseBrand());
-        
-
-    }
+		} while (!input.equalsIgnoreCase("JA"));
+		System.out.println(slangetje.getHoseBrand());
+	}
 }
