@@ -15,7 +15,7 @@ class Tuin {
 		System.out.println("Regent het (JA/NEE)");
 		slimmeSchakelaar.setRegen(reader.readLine().equalsIgnoreCase("JA"));
 		slimmeSchakelaar.activate();
-		do {
+		do { 
 			System.out.println("Regen installatie staat op" + slimmeSchakelaar.getSlimmeschakelaar());
 			System.out.println("Wilt u de toestand van de verlichting weten?");
 			if(reader.readLine().equalsIgnoreCase("JA"))
